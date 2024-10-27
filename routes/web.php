@@ -14,6 +14,8 @@ Route::controller(AuthController::class)->group(function (){
     
     Route::get('register', 'register')->name('register');
     Route::post('register/action', 'register_action')->name('register.action');
+
+    Route::get('logout', 'logout')->name('logout');
 });
 
 Route::middleware(['auth', 'user'])->prefix('user')->group(function (){
