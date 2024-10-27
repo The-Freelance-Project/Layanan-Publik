@@ -12,10 +12,15 @@
    git clone https://github.com/The-Freelance-Project/Layanan-Publik.git
    cd Layanan-Publik
    ```
-2. Install dependencies via Composer:
+2.1. Install dependencies via Composer:
    ```bash
    composer install
    ```
+2.2. Install node Dependencies :
+   ```bash
+   npm install
+   ```
+
 3. Copy `.env.example` to `.env` and configure your database and other necessary environment variables:
    ```bash
    cp .env.example .env
