@@ -6,10 +6,13 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ResponseController;
 use Illuminate\Support\Facades\Route;
 
+
+// Route Landig=ng Page
 Route::get('/', function () {
     return view('landingPage');
 });
 
+// Route Authentikasi
 Route::controller(AuthController::class)->group(function (){
     Route::get('login', 'login')->name('login');
     Route::post('login/action', 'login_action')->name('login.action');
@@ -20,6 +23,7 @@ Route::controller(AuthController::class)->group(function (){
     Route::get('logout', 'logout')->name('logout');
 });
 
+// Route Untuk Pengguna dengan Role 'user'
 Route::middleware(['auth', 'user'])->prefix('user')->group(function (){
 
     Route::controller(DashboardController::class)->group(function(){
@@ -40,6 +44,7 @@ Route::middleware(['auth', 'user'])->prefix('user')->group(function (){
 });
 
 
+// Route Untuk Pengguna dengan Role 'admin'
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function (){
 
     Route::controller(DashboardController::class)->group(function(){
