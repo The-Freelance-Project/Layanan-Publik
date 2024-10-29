@@ -31,7 +31,7 @@
    ```
 6. Run database migrations and seed the database with test data:
    ```bash
-   php artisan migrate
+   php artisan migrate:fresh --seed
    ```
 
 7. Build node modules (for tailwindCss) :
