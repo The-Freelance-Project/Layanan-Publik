@@ -10,7 +10,11 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-    Halaman Register
+
+<h1>HALAMAN REGISTER</h1>
+<p>file: resources/views/auth/register.blade.php</p>
+
+<br><br>
 
     <!-- Set Alert biar muncul kalo error -->
     @include('components.alert')

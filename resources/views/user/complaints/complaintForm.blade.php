@@ -10,6 +10,12 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
+        
+<h1>HALAMAN TAMBAH COMPLAINT</h1>
+<p>file: resources/views/user/complaints/complaintForm.blade.php</p>
+
+<br><br>
+
 
     <!-- Set Alert biar muncul kalo error -->
     @include('components.alert')
@@ -20,7 +26,6 @@
     $user = Auth::user(); 
     @endphp
 
-    Halaman Tambah Complaint
 
     <!-- Navigasi -->
     <ul>

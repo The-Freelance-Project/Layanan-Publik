@@ -15,6 +15,11 @@
 @include('components.alert')
 <br>
 
+<h1>HALAMAN COMPLAINT LIST</h1>
+<p>file: resources/views/user/complaints/complaintList.blade.php</p>
+
+<br><br>
+
 <!-- ambil data user -->
  @php
  $user = Auth::user(); 

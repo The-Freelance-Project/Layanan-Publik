@@ -11,6 +11,11 @@
 </head>
 <body>
 
+<h1>HALAMAN LOGIN</h1>
+<p>file: resources/views/auth/login.blade.php</p>
+
+<br><br>
+
     <!-- Set Alert biar muncul kalo error -->
     @include('components.alert')
     

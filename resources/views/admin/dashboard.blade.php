@@ -11,8 +11,8 @@
 </head>
 <body>
 
-<h1>HALAMAN DASHBOARD USER</h1>
-<p>file: resources/views/user/dashboard.blade.php</p>
+<h1>HALAMAN DASHBOARD ADMIN</h1>
+<p>file: resources/views/admin/dashboard.blade.php</p>
 
 <br><br>
 

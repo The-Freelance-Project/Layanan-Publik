@@ -11,6 +11,11 @@
     </head>
     <body>
 
+<h1>HALAMAN LIHAT 1 COMPLAINT</h1>
+<p>file: resources/views/user/complaints/complaintView.blade.php</p>
+
+<br><br>
+
     <!-- Set Alert biar muncul kalo error atau notifikasi sukses -->
     @include('components.alert')
     <br>
@@ -20,7 +25,7 @@
     $user = Auth::user(); 
     @endphp
 
-    Halaman Lihat 1 Complaint
+
 
     <!-- Navigasi -->
     <ul>
@@ -38,10 +43,10 @@
     <div class="border">
 
         <h1>Complaint View</h1>
-        <h2>Category: {{$complaint->category->name}}</h2>
-        <h2>Title: {{$complaint->title}}</h2>
-        <h2>description: {{$complaint->description}}</h2>
-        <h2>status: {{$complaint->status}}</h2>
+        <h2>Category: {{ $complaint->category->name }}</h2>
+        <h2>Title: {{ $complaint->title }}</h2>
+        <h2>description: {{ $complaint->description }}</h2>
+        <h2>status: {{ $complaint->status }}</h2>
     
     </div>
 
@@ -50,9 +55,9 @@
     <h1>Complaint Status History</h1>
     
     @foreach ($complaint->complaintHistory as $statusHistory)    
-        <h2>Tanggal: {{$statusHistory->created_at}}</h2>
-        <h2>Status Complaint: {{$statusHistory->status}}</h2>
-        <h2>Oleh: {{$statusHistory->changedBy->name}}</h2>
+        <h2>Tanggal: {{ $statusHistory->created_at }}</h2>
+        <h2>Status Complaint: {{ $statusHistory->status }}</h2>
+        <h2>Oleh: {{ $statusHistory->changedBy->name }}</h2>
     @endforeach
 
 
