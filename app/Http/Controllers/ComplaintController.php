@@ -37,7 +37,7 @@ class ComplaintController extends Controller
 
             ComplaintStatusHistory::create([
                 'complaint_id' => $complaint->id,
-                'chhanged_by' => Auth::user()->id,
+                'changed_by' => Auth::user()->id,
                 'status' => 'pending',
             ]);
 
