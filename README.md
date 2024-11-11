@@ -3,7 +3,7 @@
 - PHP >= 8.3
 - Composer
 - Laravel >= 11.x
-- MySQL or PostgreSQL (for proper transaction support)
+- MySQL
 
 ## Installation
 
@@ -31,7 +31,7 @@
    ```
 6. Run database migrations and seed the database with test data:
    ```bash
-   php artisan migrate:fresh --seed
+   php artisan migrate --seed
    ```
 
 7. Build node modules (for tailwindCss) :
@@ -49,3 +49,54 @@
    ```bash
    npm run dev
    ```
+
+## User Login
+
+1. User:
+   - email
+      ```bash
+      user@gmail.com
+      ```
+   - password
+      ```bash
+      123456
+      ```
+
+1. Admin:
+   - email
+      ```bash
+      admin@gmail.com
+      ```
+   - password
+      ```bash
+      123456
+      ```
+
+
+## Directory for FrontEnd
+
+### Work at this folders:
+`resource/views/`
+
+### Directory Overview 
+
+|- views
+|   |- admin
+|   |  - dashboard.blade.php
+|
+|   |- auth
+|   |  - login.blade.php
+|   |  - register.blade.php
+|
+|   |- components
+|   |  - alert.blade.php
+|
+|   |- user
+|   |  |- complaints
+|   |  |  - complaintForm.blade.php
+|   |  |  - complaintList.blade.php
+|   |  |  - complaintView.blade.php
+|   |  - dashboard.blade.php
+|
+|   |- landingPage.blade.php
+
