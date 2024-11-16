@@ -1,8 +1,5 @@
 <!-- resources/views/components/overview.blade.php -->
-<div class="bg-white p-6 rounded-lg shadow-md mb-8">
-    <h2 class="text-2xl font-bold text-gray-800 mb-4">Selamat Datang, {{ Auth::user()->name }}!</h2>
-    <p class="text-gray-600 mb-6">Kami senang Anda kembali! Berikut adalah ringkasan singkat aktivitas terbaru Anda:</p>
-
+<div class="bg-white px-5 rounded-lg shadow-md mb-8">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Card: Total Tasks -->
         <div class="bg-gradient-to-r from-yellow-400 via-red-400 to-pink-500 p-4 rounded-lg shadow-md">
