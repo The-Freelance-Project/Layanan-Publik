@@ -1,5 +1,5 @@
 <!-- resources/views/components/overview.blade.php -->
-<div class="bg-white px-5 rounded-lg shadow-md mb-8">
+<div class="bg-white px-5 rounded-lg shadow-md mb-8 p-10">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Card: Total Tasks -->
         <div class="bg-gradient-to-r from-yellow-400 via-red-400 to-pink-500 p-4 rounded-lg shadow-md">
