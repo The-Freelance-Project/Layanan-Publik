@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Complaint;
 use App\Models\ComplaintStatusHistory;
+use App\Models\Notification;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -39,6 +40,12 @@ class ComplaintController extends Controller
                 'complaint_id' => $complaint->id,
                 'changed_by' => Auth::user()->id,
                 'status' => 'pending',
+            ]);
+
+            Notification::create([
+                "user_id" => Auth::user()->id,
+                "title" => "Pengaduan Telah Terkirim!",
+                "text" => "Terima kasih! Pengaduan Anda telah berhasil terkirim dan saat ini sedang dalam proses peninjauan oleh tim kami. Kami akan segera memberikan tanggapan terkait laporan Anda."
             ]);
 
             return redirect(route('complaint'))->with('message', 'Success Add Complaint');
