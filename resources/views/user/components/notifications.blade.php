@@ -11,7 +11,7 @@
         <!-- Notifikasi List -->
         <div class="mt-4 space-y-4">
 
-        
+
              @foreach ($notifications as $notif)
 
                 <!-- Jika Pengajuan TERKIRIM Pakai Notif ini  -->
@@ -29,7 +29,8 @@
                                 <p class="text-sm text-gray-600">{{$notif->text}}</p>
                             </div>
                         </div>
-                        <span class="text-sm text-gray-500">30 menit yang lalu</span>
+                        <span class="text-sm text-gray-500">{{ \Carbon\Carbon::parse($notif->created_at)->locale('id')->diffForHumans() }}
+                        </span>
                     </div>
                 <!-- ------------ ------------------- ---------- ------- ------ ------ -->
                 
@@ -49,7 +50,7 @@
                                 <p class="text-sm text-gray-600">{{$notif->text}}</p>
                             </div>
                         </div>
-                        <span class="text-sm text-gray-500">30 menit yang lalu</span>
+                        <span class="text-sm text-gray-500">{{ \Carbon\Carbon::parse($notif->created_at)->locale('id')->diffForHumans() }}</span>
                     </div>
                 <!-- ------------ ------------------- ---------- ------- ------ ------ -->
 
@@ -67,7 +68,7 @@
                                 <p class="text-sm text-gray-600">{{$notif->text}}</p>
                             </div>
                         </div>
-                        <span class="text-sm text-gray-500">2 jam yang lalu</span>
+                        <span class="text-sm text-gray-500">{{ \Carbon\Carbon::parse($notif->created_at)->locale('id')->diffForHumans() }}</span>
                     </div>
                 <!-- ------------ ------------------- ---------- ------- ------ ------ -->
 
@@ -86,7 +87,7 @@
                                 <p class="text-sm text-gray-600">{{$notif->text}}</p>
                             </div>
                         </div>
-                        <span class="text-sm text-gray-500">1 menit yang lalu</span>
+                        <span class="text-sm text-gray-500">{{ \Carbon\Carbon::parse($notif->created_at)->locale('id')->diffForHumans() }}</span>
                     </div>
                 <!-- ------------ ------------------- ---------- ------- ------ ------ -->
 
@@ -104,7 +105,7 @@
                                 <p class="text-sm text-gray-600">{{$notif->text}}</p>
                             </div>
                         </div>
-                        <span class="text-sm text-gray-500">2 jam yang lalu</span>
+                        <span class="text-sm text-gray-500">{{ \Carbon\Carbon::parse($notif->created_at)->locale('id')->diffForHumans() }}</span>
                     </div>
                 <!-- ------------ ------------------- ---------- ------- ------ ------ -->
                 @endif

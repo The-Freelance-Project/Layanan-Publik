@@ -8,6 +8,7 @@ use App\Models\ComplaintStatusHistory;
 use App\Models\Notification;
 use Auth;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class ComplaintController extends Controller
 {
@@ -42,10 +43,11 @@ class ComplaintController extends Controller
                 'status' => 'pending',
             ]);
 
+            $tanggal = Carbon::parse($complaint->created_at)->locale('id')->isoFormat('dddd, D MMMM YYYY');
             Notification::create([
                 "user_id" => Auth::user()->id,
-                "title" => "Pengaduan Telah Terkirim!",
-                "text" => "Terima kasih! Pengaduan Anda telah berhasil terkirim dan saat ini sedang dalam proses peninjauan oleh tim kami. Kami akan segera memberikan tanggapan terkait laporan Anda."
+                "title" => "Pengaduan Terkirim",
+                "text" => "Terima kasih! Pengaduan Anda pada $tanggal, tentang $complaint->title, telah berhasil terkirim dan saat ini sedang dalam proses peninjauan oleh tim kami. Kami akan segera memberikan tanggapan terkait laporan Anda."
             ]);
 
             return redirect(route('complaint'))->with('message', 'Success Add Complaint');

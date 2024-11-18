@@ -20,7 +20,7 @@ class DashboardController extends Controller
 
         $totalComplaint = $complaint->count();
 
-        $notifications = Notification::where('user_id', Auth::user()->id)->get();
+        $notifications = Notification::where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC')->get();
 
         return view('user.dashboard', compact('totalComplaint', 'pendingComplaint', 'inProgressComplaint', 'resolvedComplaint', 'rejectedComplaint', 'canceledComplaint', 'notifications'));
     }
