@@ -26,5 +26,10 @@ class CategorySeeder extends Seeder
             'name' => 'Lingkungan',
             'description' => 'Deskripsi tentang kategori Lingkungan di indonesia'
         ]);
+
+        Category::create([
+            'name' => 'Keresahan',
+            'description' => 'Deskripsi tentang kategori Keresahan di indonesia'
+        ]);
     }
 }

@@ -63,4 +63,19 @@ class User extends Authenticatable
     {
         return $this->hasMany(ComplaintStatusHistory::class, 'changed_by', 'id');
     }
+
+    public function notify(): HasMany
+    {
+        return $this->hasMany(Notification::class, 'user_id', 'id');
+    }
+
+    public function chat_from(): HasMany
+    {
+        return $this->hasMany(Chat::class, 'from', 'id');
+    }
+
+    public function chat_to(): HasMany
+    {
+        return $this->hasMany(Chat::class, 'to', 'id');
+    }
 }
