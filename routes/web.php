@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ResponseController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -51,4 +52,12 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function (){
         Route::get('dashboard', 'admin_dashboard')->name('admin.dashboard');
     });
 
+});
+
+// Route untuk admin dan User
+Route::middleware('auth')->controller(UserController::class)->prefix('u')->group(function(){
+    Route::get('profile', 'profile')->name('profile');
+
+    Route::post('profile-change-name', 'profile_change_name')->name('profile.change.name');
+    Route::post('profile-change-password', 'profile_change_password')->name('profile.change.password');
 });
