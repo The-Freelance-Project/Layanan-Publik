@@ -10,6 +10,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
+
 <body
     class="flex items-center justify-center min-h-screen bg-gradient-to-r from-red-600 via-yellow-500 to-black relative">
     <!-- Alert Component for Error Messages -->

@@ -11,6 +11,7 @@
 
 <body class="flex items-center justify-center min-h-screen bg-gradient-to-r from-red-600 via-yellow-500 to-black">
     <!-- Alert Component for Error Messages -->
+
     @include('components.alert')
 
     <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
