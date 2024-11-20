@@ -47,7 +47,7 @@
             </div>
 
             <!-- Form Pengaduan -->
-            <form action="{{ route('complaint.add') }}" method="POST" class="space-y-8">
+            <form action="{{ route('complaint.add') }}" method="POST" class="space-y-8" enctype="multipart/form-data">
                 @csrf
 
                 <!-- Kategori -->
@@ -81,6 +81,15 @@
                     <textarea name="description" id="description"
                         class="w-full p-4 border-2 border-indigo-400 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
                         placeholder="Deskripsikan pengaduan Anda" required></textarea>
+                </div>
+
+                <div>
+                    <label for="location">Lokasi</label>
+                    <input type="text" name="location" id="location" required>
+                </div>
+                <div>
+                    <label for="photo">Bukti/Foto</label>
+                    <input type="file" name="photo" id="photo" required>
                 </div>
 
                 <!-- Tombol Kirim -->

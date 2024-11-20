@@ -17,6 +17,8 @@ return new class extends Migration
             $table->foreignUuid('category_id')->nullable();
             $table->string('title', 200);
             $table->text('description');
+            $table->text('location')->nullable();
+            $table->string('photo', 250)->nullable();
             $table->enum('status', ['pending', 'in_progress', 'resolved', 'rejected', 'canceled'])->default('pending');
             $table->timestamps();
         });

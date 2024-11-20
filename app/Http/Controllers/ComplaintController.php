@@ -13,7 +13,7 @@ use Carbon\Carbon;
 class ComplaintController extends Controller
 {
     public function complaint_list(){
-        $complaints = Complaint::where('user_id', Auth::user()->id)->get();
+        $complaints = Complaint::where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC')->get();
         return view('user.complaints.complaintList', compact('complaints'));
     }
 
@@ -26,33 +26,49 @@ class ComplaintController extends Controller
         $valid = $request->validate([
             'title' => 'required|string|max:200',
             'description' => 'required|string',
-            'category' => 'required'
+            'category' => 'required',
+            'location' => 'required',
+            'photo' => 'required',
         ]);
+
+        $file = $request->file('photo');
+        $userId = Auth::user()->id;
+        $timestamp = now()->timestamp;
+        $fileName = $userId . '-' . $timestamp . '.' . $file->getClientOriginalExtension();
+        $filePath = 'complaints';
+
+        try {
+            $file->move($filePath, $fileName);
+        } catch (\Throwable $th) {
+            return back()->with('error', "Terjadi Kesalahan saat mengupload file, tunggu beberapa saat dan coba lagi.");
+        }
 
         try {
             $complaint = Complaint::create([
-                'user_id' => Auth::user()->id,
+                'user_id' => $userId,
                 'category_id' => $valid['category'],
                 'title' => $valid['title'],
-                'description' => $valid['description']
+                'description' => $valid['description'],
+                'location' => $valid['location'],
+                'photo' => "/".$filePath."/".$fileName
             ]);
 
             ComplaintStatusHistory::create([
                 'complaint_id' => $complaint->id,
-                'changed_by' => Auth::user()->id,
+                'changed_by' => $userId,
                 'status' => 'pending',
             ]);
 
             $tanggal = Carbon::parse($complaint->created_at)->locale('id')->isoFormat('dddd, D MMMM YYYY');
             Notification::create([
-                "user_id" => Auth::user()->id,
+                "user_id" => $userId,
                 "title" => "Pengaduan Terkirim",
                 "text" => "Terima kasih! Pengaduan Anda pada $tanggal, tentang $complaint->title, telah berhasil terkirim dan saat ini sedang dalam proses peninjauan oleh tim kami. Kami akan segera memberikan tanggapan terkait laporan Anda."
             ]);
 
             return redirect(route('complaint'))->with('message', 'Success Add Complaint');
         } catch (\Throwable $th) {
-            return back()->with('error', $th);
+            return back()->with('error', "Terjadi Kesalahan saat mengupload file, tunggu beberapa saat dan coba lagi.");
         }
     }
 

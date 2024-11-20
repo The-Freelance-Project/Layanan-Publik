@@ -21,7 +21,7 @@
 </head>
 
 <body class=" bg-white">
-
+@include('components.alert')
     <div class=" md:p-4 bg-white min-h-screen">
         <div class=" mx-auto p-1 lg:p-5 shadow-lg rounded-lg overflow-hidden">
             <div class=" flex justify-end pr-10">
@@ -37,7 +37,7 @@
                 <!-- Complaint Image -->
                 <div class="p-3">
                     <a href="https://via.placeholder.com/600" data-lightbox="complaint-image">
-                        <img src="https://via.placeholder.com/300" alt="Complaint Image"
+                        <img src="{{$complaint->photo}}" alt="Complaint Image"
                             class="object-cover w-full h-96 rounded-t-lg md:rounded-none md:rounded-l-lg">
                     </a>
                 </div>
@@ -84,6 +84,15 @@
                                         : 'fa-check-circle') }} mr-2"></i>
                             {{ $complaint->status }}
                         </div>
+                    </div>
+
+                    <!-- Lokasi -->
+                    <div class="mb-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-green-500"></i>
+                            <h2 class="text-lg font-semibold text-gray-800 ml-2">Lokasi</h2>
+                        </div>
+                        <p class="text-gray-700">{{ $complaint->location }}</p>
                     </div>
                 </div>
             </div>

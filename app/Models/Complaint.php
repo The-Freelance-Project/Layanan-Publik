@@ -17,6 +17,8 @@ class Complaint extends Model
         'title',
         'description',
         'status',
+        "location",
+        "photo"
     ];
 
     public function user(): BelongsTo
