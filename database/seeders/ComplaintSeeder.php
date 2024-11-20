@@ -25,6 +25,8 @@ class ComplaintSeeder extends Seeder
                 'title' => 'Masalah '. $category->name . ' di Sumatera',
                 'description' => 'Terjadi masalah serius di Sumatera terkait ' . $category->name,
                 'status' => 'pending',
+                'photo' => '/complaints/9d88a7b8-2503-4e23-b6b9-c4ae263f7df1-1732103379.webp',
+                'location' => 'Jl. Akbardokoni, Kecamatan Ambatukam'
             ]);
 
             ComplaintStatusHistory::create([

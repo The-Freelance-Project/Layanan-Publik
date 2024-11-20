@@ -35,7 +35,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex items-center space-x-3 hover:bg-teal-500 p-2 rounded">
+                    <a href="{{ route('history.list') }}" class="flex items-center space-x-3 hover:bg-teal-500 p-2 rounded">
                         <i class="fas fa-history"></i>
                         <span>Riwayat</span>
                     </a>
@@ -47,13 +47,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex items-center space-x-3 hover:bg-teal-500 p-2 rounded">
+                    <a href="{{ route('profile') }}" class="flex items-center space-x-3 hover:bg-teal-500 p-2 rounded">
                         <i class="fas fa-user"></i>
                         <span>Profil</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex items-center space-x-3 hover:bg-teal-500 p-2 rounded">
+                    <a href="{{ route('logout') }}" class="flex items-center space-x-3 hover:bg-teal-500 p-2 rounded">
                         <i class="fas fa-sign-out-alt"></i>
                         <span>Logout</span>
                     </a>

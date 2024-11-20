@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CompaintStatusHistoryController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ResponseController;
@@ -40,6 +41,10 @@ Route::middleware(['auth', 'user'])->prefix('user')->group(function (){
 
     Route::controller(ResponseController::class)->prefix('responses')->group(function(){
         Route::post('add', 'response_add')->name('response.add');
+    });
+
+    Route::controller(CompaintStatusHistoryController::class)->prefix('history')->group(function(){
+        Route::get('list', 'history_list')->name('history.list');
     });
 
 });
