@@ -57,6 +57,7 @@ class ComplaintController extends Controller
                 'complaint_id' => $complaint->id,
                 'changed_by' => $userId,
                 'status' => 'pending',
+                'note' => 'Aduan Dikirim Oleh User'. Auth::user()->name
             ]);
 
             $tanggal = Carbon::parse($complaint->created_at)->locale('id')->isoFormat('dddd, D MMMM YYYY');
@@ -74,6 +75,15 @@ class ComplaintController extends Controller
 
     public function complaint_view($id){
         $complaint = Complaint::find($id);
-        return view('user.complaints.complaintView', compact('complaint'));
+        if (Auth::user()->role == 'user') {
+            return view('user.complaints.complaintView', compact('complaint'));
+        } else {
+            return view('admin.complaints.complaintView', compact('complaint'));
+        }
+    }
+
+    public function complaint_list_admin(){
+        $complaints = Complaint::orderBy('created_at', 'DESC')->get();
+        return view('admin.complaints.complaintList', compact('complaints'));
     }
 }

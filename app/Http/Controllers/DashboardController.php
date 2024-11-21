@@ -26,6 +26,17 @@ class DashboardController extends Controller
     }
 
     public function admin_dashboard(){
-        return view('admin.dashboard');
+
+        $complaint = Complaint::all();
+        // 'pending', 'in_progress', 'resolved', 'rejected', 'canceled'
+        $pendingComplaint = $complaint->where('status', 'pending')->count();
+        $inProgressComplaint = $complaint->where('status', 'in_progress')->count();
+        $resolvedComplaint = $complaint->where('status', 'resolved')->count();
+        $rejectedComplaint = $complaint->where('status', 'rejected')->count();
+        $canceledComplaint = $complaint->where('status', 'canceled')->count();
+
+        $totalComplaint = $complaint->count();
+
+        return view('admin.dashboard', compact('totalComplaint', 'pendingComplaint', 'inProgressComplaint', 'resolvedComplaint', 'rejectedComplaint', 'canceledComplaint'));
     }
 }

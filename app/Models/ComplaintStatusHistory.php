@@ -14,6 +14,7 @@ class ComplaintStatusHistory extends Model
         'changed_by',
         'complaint_id',
         'status',
+        'note',
     ];
 
     public function changedBy(): BelongsTo
