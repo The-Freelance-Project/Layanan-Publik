@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Complaint;
 use App\Models\ComplaintStatusHistory;
 use App\Models\User;
+use Auth;
 use Illuminate\Database\Seeder;
 
 class ComplaintSeeder extends Seeder
@@ -33,6 +34,7 @@ class ComplaintSeeder extends Seeder
                 'complaint_id' => $complaint->id,
                 'changed_by' => $user->id,
                 'status' => 'pending',
+                'note' => 'Aduan Dikirim Oleh User'. $user->name
             ]);
         }
     }

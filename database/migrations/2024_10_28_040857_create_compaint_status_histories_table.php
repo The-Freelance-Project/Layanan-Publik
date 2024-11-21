@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignUuid('complaint_id')->references('id')->on('complaints');
             $table->foreignUuid('changed_by')->references('id')->on('users');
             $table->enum('status', ['pending', 'in_progress', 'resolved', 'rejected', 'canceled'])->default('pending');
+            $table->text('note')->nullable();
             $table->timestamps();
         });
     }
