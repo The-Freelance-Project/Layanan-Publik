@@ -121,7 +121,7 @@
                                     <p class="text-gray-700"><span class="font-semibold">Status:</span>
                                         {{ $statusHistory->status }}</p>
                                     <p class="text-gray-700"><span class="font-semibold">Deskripsi:</span>
-                                        {{ $complaint->description }}
+                                        {{ $statusHistory->note }}
                                     </p>
                                 </div>
                             </div>

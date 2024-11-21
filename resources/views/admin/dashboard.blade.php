@@ -32,10 +32,19 @@
  <br>
  <br>
 
+ <div class="w-full grid grid-cols-3 gap-3 mb-5">
+    <div class="p-2 border border-black rounded">Total Complaint {{ $totalComplaint }}</div>
+    <div class="p-2 border border-black rounded">Pending Complaint {{ $pendingComplaint }}</div>
+    <div class="p-2 border border-black rounded">In Progress Complaint {{ $inProgressComplaint }}</div>
+    <div class="p-2 border border-black rounded">Resolved Complaint {{ $resolvedComplaint }}</div>
+    <div class="p-2 border border-black rounded">Rejected Complaint {{ $rejectedComplaint }}</div>
+    <div class="p-2 border border-black rounded">Canceled Complaint {{ $canceledComplaint }}</div>
+ </div>
+
  <!-- Navigasi -->
  <ul>
     <li>
-        <a href="{{ route('complaint') }}">Complaint List</a>
+        <a href="{{ route('complaint.admin') }}">Complaint List</a>
     </li>
     <li>
         <!-- untuk logout gunakan ini -->

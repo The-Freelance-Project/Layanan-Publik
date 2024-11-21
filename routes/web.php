@@ -57,6 +57,19 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function (){
         Route::get('dashboard', 'admin_dashboard')->name('admin.dashboard');
     });
 
+    Route::controller(ComplaintController::class)->prefix('complaints')->group(function(){
+        Route::get('list', 'complaint_list_admin')->name('complaint.admin');
+        Route::get('view/{id}', 'complaint_view')->name('complaint.view.admin');
+    });
+
+    Route::controller(ResponseController::class)->prefix('responses')->group(function(){
+        Route::post('add', 'response_add')->name('response.add.admin');
+    });
+
+    Route::controller(CompaintStatusHistoryController::class)->prefix('history')->group(function(){
+        Route::post('process/{id}', 'process')->name('complaint.process');
+    });
+
 });
 
 // Route untuk admin dan User
