@@ -5,6 +5,7 @@ use App\Http\Controllers\CompaintStatusHistoryController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ResponseController;
+use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -78,4 +79,10 @@ Route::middleware('auth')->controller(UserController::class)->prefix('u')->group
 
     Route::post('profile-change-name', 'profile_change_name')->name('profile.change.name');
     Route::post('profile-change-password', 'profile_change_password')->name('profile.change.password');
+});
+
+// Route untuk Login dengan Google
+Route::controller(SocialiteController::class)->prefix('auth/google')->group(function(){
+    Route::get('redirect', 'redirect')->name('redirect');
+    Route::get('callback', 'callback')->name('callback');
 });
