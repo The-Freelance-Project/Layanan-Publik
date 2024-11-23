@@ -17,7 +17,7 @@ class CategoryController extends Controller
             $category = Category::find($request->input('id'));
             return view('admin.categories.categoryForm', compact('category'));
         } else {
-            $category = collect(['name' => null, 'description' => null]);
+            $category = (object) ['name' => null, 'description' => null];
             return view('admin.categories.categoryForm', compact('category'));
         }
     }
