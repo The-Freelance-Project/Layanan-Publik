@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CompaintStatusHistoryController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\DashboardController;
@@ -69,6 +70,13 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function (){
 
     Route::controller(CompaintStatusHistoryController::class)->prefix('history')->group(function(){
         Route::post('process/{id}', 'process')->name('complaint.process');
+    });
+
+    Route::controller(CategoryController::class)->prefix('category')->group(function(){
+        Route::get('list', 'category_list')->name('category.list');
+        Route::get('form', 'category_form')->name('category.form');
+        Route::post('add', 'category_add')->name('category.add');
+        Route::get('delete/{id}', 'category_delete')->name('category.delete');
     });
 
 });

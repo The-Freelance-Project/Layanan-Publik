@@ -33,7 +33,8 @@ class AuthController extends Controller
             ])->onlyInput('email');
         }
 
-        if (Auth::attempt($credentials)) {
+        $remember = $request->has('remember_me') && $request->remember_me === 'true';
+        if (Auth::attempt($credentials, $remember)) {
             $request->session()->regenerate();
             return redirect(route('user.dashboard'))->with('message', 'Login berhasil');
         }

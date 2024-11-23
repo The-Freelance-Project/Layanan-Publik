@@ -15,6 +15,34 @@
 
 <br><br>
 
+  <!-- Navigasi -->
+  <ul class="w-full flex space-x-4 px-4">
+
+    <li class="p-1 border border-black rounded">
+        <a href="{{ route('complaint.admin') }}">Complaint List</a>
+    </li>
+
+    <li class="p-1 border border-black rounded">
+        <a href="{{ route('category.list') }}">Category List</a>
+    </li>
+
+    <li class="p-1 border border-black rounded">
+        <a href="{{ route('profile') }}">Profile</a>
+    </li>
+
+    <li class="p-1 border border-black rounded">
+        <!-- untuk logout gunakan ini -->
+        <a href="{{ route('logout') }}">Logout</a>
+    </li>
+
+    <li class="p-1 border border-black rounded">
+        <a href="{{ redirect()->back() }}">Kembali</a>
+    </li>
+
+ </ul>
+
+ <br><br>
+
 <!-- Set Alert biar muncul kalo error -->
 @include('components.alert')
 

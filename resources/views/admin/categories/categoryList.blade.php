@@ -11,26 +11,13 @@
 </head>
 <body>
 
-<h1>HALAMAN DASHBOARD ADMIN</h1>
-<p>file: resources/views/admin/dashboard.blade.php</p>
+<h1>HALAMAN CATEGORY LIST ADMIN</h1>
 
 <br><br>
 
-<!-- Set Alert biar muncul kalo error -->
-@include('components.alert')
+<a href="{{ route('category.form') }}" class="p-1 border border-black rounded">Buat Kategori Batu</a>
 
-<!-- ambil data user -->
- @php
- $user = Auth::user(); 
- @endphp
-
-<!-- Menampilkan data user -->
- {{ $user->name }}
- <br>
- {{ $user->email }}
-
- <br>
- <br>
+<br><br>
 
   <!-- Navigasi -->
   <ul class="w-full flex space-x-4 px-4">
@@ -58,18 +45,36 @@
 
  </ul>
 
- <br>
+ <br><br>
 
- <div class="w-full grid grid-cols-3 gap-3 mb-5">
-    <div class="p-2 border border-black rounded">Total Complaint {{ $totalComplaint }}</div>
-    <div class="p-2 border border-black rounded">Pending Complaint {{ $pendingComplaint }}</div>
-    <div class="p-2 border border-black rounded">In Progress Complaint {{ $inProgressComplaint }}</div>
-    <div class="p-2 border border-black rounded">Resolved Complaint {{ $resolvedComplaint }}</div>
-    <div class="p-2 border border-black rounded">Rejected Complaint {{ $rejectedComplaint }}</div>
-    <div class="p-2 border border-black rounded">Canceled Complaint {{ $canceledComplaint }}</div>
- </div>
+<!-- Set Alert biar muncul kalo error -->
+@include('components.alert')
 
+<table>
+    <thead>
+        <tr>
+            <th>Nama</th>
+            <th>Deskripsi</th>
+            <th>Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
 
+        @foreach ($categories as $category)
+            
+        <tr>
+            <td>{{ $category->name }}</td>
+            <td class="px-4">{{ $category->description }}</td>
+            <td class="flex space-x-2">
+                <a href="{{ route('category.form', ['id' => $category->id]) }}">Edit</a>
+                <a href="{{ route('category.delete', ['id' => $category->id]) }}">Hapus Kategori</a>
+            </td>
+        </tr>
+
+        @endforeach
+
+    </tbody>
+</table>
 
 </body>
 </html>

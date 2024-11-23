@@ -11,26 +11,9 @@
 </head>
 <body>
 
-<h1>HALAMAN DASHBOARD ADMIN</h1>
-<p>file: resources/views/admin/dashboard.blade.php</p>
+<h1>HALAMAN ADMIN FORM TAMBAH dan EDIT CATEGORY</h1>
 
 <br><br>
-
-<!-- Set Alert biar muncul kalo error -->
-@include('components.alert')
-
-<!-- ambil data user -->
- @php
- $user = Auth::user(); 
- @endphp
-
-<!-- Menampilkan data user -->
- {{ $user->name }}
- <br>
- {{ $user->email }}
-
- <br>
- <br>
 
   <!-- Navigasi -->
   <ul class="w-full flex space-x-4 px-4">
@@ -58,18 +41,27 @@
 
  </ul>
 
- <br>
+ <br><br>
 
- <div class="w-full grid grid-cols-3 gap-3 mb-5">
-    <div class="p-2 border border-black rounded">Total Complaint {{ $totalComplaint }}</div>
-    <div class="p-2 border border-black rounded">Pending Complaint {{ $pendingComplaint }}</div>
-    <div class="p-2 border border-black rounded">In Progress Complaint {{ $inProgressComplaint }}</div>
-    <div class="p-2 border border-black rounded">Resolved Complaint {{ $resolvedComplaint }}</div>
-    <div class="p-2 border border-black rounded">Rejected Complaint {{ $rejectedComplaint }}</div>
-    <div class="p-2 border border-black rounded">Canceled Complaint {{ $canceledComplaint }}</div>
- </div>
+<!-- Set Alert biar muncul kalo error -->
+@include('components.alert')
 
 
+<!-- Ini Form Create Category nya -->
+<form action="{{ route('category.add') }}" method="post">
+    @csrf
+    <div>
+        <label for="name">Nama Kategory</label>
+        <input type="text" name="name" id="name" value="{{ $category->name }}">
+    </div>
+    <div>
+        <label for="description"></label>
+        <textarea name="description" id="description">{{ $category->description }}</textarea>
+    </div>
+    <div>
+        <button type="submit">Submit Kategori Form</button>
+    </div>
+</form>
 
 </body>
 </html>
