@@ -40,4 +40,9 @@ class Complaint extends Model
     {
         return $this->hasMany(ComplaintStatusHistory::class, 'complaint_id', 'id');
     }
+
+    public function getCategoryAttribute()
+    {
+        return $this->belongsTo(Category::class)->getResults() ?? new Category(['name' => 'No Category', 'description' => 'No Category']);
+    }
 }

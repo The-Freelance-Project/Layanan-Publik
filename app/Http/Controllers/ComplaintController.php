@@ -82,8 +82,32 @@ class ComplaintController extends Controller
         }
     }
 
-    public function complaint_list_admin(){
-        $complaints = Complaint::orderBy('created_at', 'DESC')->get();
+    public function complaint_list_admin(Request $request){
+        $request->validate([
+            'status' => 'nullable|string', // Optional
+            'start_date' => 'nullable|date', // Optional
+            'end_date' => 'nullable|date|after_or_equal:start_date', // Optional
+        ]);
+
+        // Query dasar
+        $query = Complaint::query();
+
+        // Tambahkan kondisi berdasarkan input
+        if ($request->filled('status')) {
+            $query->where('status', $request->status);
+        }
+
+        if ($request->filled('start_date')) {
+            $query->whereDate('created_at', '>=', $request->start_date);
+        }
+
+        if ($request->filled('end_date')) {
+            $query->whereDate('created_at', '<=', $request->end_date);
+        }
+
+        // Eksekusi query
+        $complaints = $query->orderBy('created_at', 'DESC')->get();
+        
         return view('admin.complaints.complaintList', compact('complaints'));
     }
 }
