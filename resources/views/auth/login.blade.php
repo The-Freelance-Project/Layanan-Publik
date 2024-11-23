@@ -39,7 +39,7 @@
                 <div class="flex items-center">
                     <input id="remember_me" name="remember" type="checkbox"
                         class="h-4 w-4 text-red-600 focus:ring-red-600 border-gray-300 rounded">
-                    <label for="remember_me" class="ml-2 block text-sm text-gray-800">Ingat saya</label>
+                    <label for="remember_me" class="ml-2 block text-sm text-gray-800" value="true">Ingat saya</label>
                 </div>
                 <a href="#" class="text-sm text-red-600 hover:text-red-800">Lupa Kata Sandi?</a>
             </div>

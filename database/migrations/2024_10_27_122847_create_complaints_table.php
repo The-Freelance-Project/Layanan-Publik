@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('complaints', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->foreignUuid('user_id')->references('id')->on('users');
-            $table->foreignUuid('category_id')->nullable();
+            $table->foreignUuid('category_id')->nullable()->constrained('categories')->onDelete('set null');
             $table->string('title', 200);
             $table->text('description');
             $table->text('location')->nullable();
