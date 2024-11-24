@@ -104,7 +104,7 @@ Route::middleware('auth')->controller(UserController::class)->prefix('u')->group
 });
 
 // Route untuk Login dengan Google
-Route::controller(SocialiteController::class)->prefix('auth/google')->group(function(){
-    Route::get('redirect', 'redirect')->name('redirect');
-    Route::get('callback', 'callback')->name('callback');
+Route::controller(SocialiteController::class)->prefix('auth')->group(function(){
+    Route::get('{driver}/redirect', 'redirect')->name('redirect');
+    Route::get('{driver}/callback', 'callback')->name('callback');
 });
