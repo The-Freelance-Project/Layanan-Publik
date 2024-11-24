@@ -11,26 +11,13 @@
 </head>
 <body>
 
-<h1>HALAMAN DASHBOARD ADMIN</h1>
-<p>file: resources/views/admin/dashboard.blade.php</p>
+<h1>HALAMAN CATEGORY LIST ADMIN</h1>
 
 <br><br>
 
-<!-- Set Alert biar muncul kalo error -->
-@include('components.alert')
+<a href="{{ route('category.form') }}" class="p-1 border border-black rounded">Buat Kategori Batu</a>
 
-<!-- ambil data user -->
- @php
- $user = Auth::user(); 
- @endphp
-
-<!-- Menampilkan data user -->
- {{ $user->name }}
- <br>
- {{ $user->email }}
-
- <br>
- <br>
+<br><br>
 
   <!-- Navigasi -->
   <ul class="w-full flex space-x-4 px-4">
@@ -44,7 +31,7 @@
     </li>
 
     <li class="p-1 border border-black rounded">
-        <a href="{{ route('chat.list') }}">Pesan / Chat</a>
+        <a href="{{ route('chat.list') }}">Pesan / Chhat</a>
     </li>
 
     <li class="p-1 border border-black rounded">
@@ -62,18 +49,23 @@
 
  </ul>
 
- <br>
+ <br><br>
 
- <div class="w-full grid grid-cols-3 gap-3 mb-5">
-    <div class="p-2 border border-black rounded">Total Complaint {{ $totalComplaint }}</div>
-    <div class="p-2 border border-black rounded">Pending Complaint {{ $pendingComplaint }}</div>
-    <div class="p-2 border border-black rounded">In Progress Complaint {{ $inProgressComplaint }}</div>
-    <div class="p-2 border border-black rounded">Resolved Complaint {{ $resolvedComplaint }}</div>
-    <div class="p-2 border border-black rounded">Rejected Complaint {{ $rejectedComplaint }}</div>
-    <div class="p-2 border border-black rounded">Canceled Complaint {{ $canceledComplaint }}</div>
- </div>
+<!-- Set Alert biar muncul kalo error -->
+@include('components.alert')
 
-
+<form action="{{ route('chat.new') }}" method="post">
+    @csrf
+    <h1>Kirim Pesan ke {{ $user->name }}</h1>
+    <div>
+        <input type="hidden" name="to" value="{{ $user->id }}">
+    </div>
+    <div>
+        <label for="message">Isi Pesan</label>
+        <textarea name="message" id="message"></textarea>
+    </div>
+    <button type="submit" class="border p-2 border-black rounded">Kirim Pesan</button>
+</form>
 
 </body>
 </html>

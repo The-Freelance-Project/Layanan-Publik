@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ChatController;
+use App\Http\Controllers\ChatTextController;
 use App\Http\Controllers\CompaintStatusHistoryController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\DashboardController;
@@ -79,6 +81,18 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function (){
         Route::get('delete/{id}', 'category_delete')->name('category.delete');
     });
 
+    Route::controller(ChatController::class)->prefix('chat')->group(function(){
+        Route::get('list', 'chat_list')->name('chat.list');
+        Route::get('form/{id}', 'chat_form')->name('chat.form');
+        Route::post('new', 'new_chat')->name('chat.new');
+        Route::get('status/change/{id}', 'chatChange')->name('chatStatus.change');
+    });
+
+    Route::controller(ChatTextController::class)->prefix('chatText')->group(function(){
+        Route::get('view/{id}', 'chatText_list')->name('chatText');
+        Route::post('send', 'send_chat')->name('send.chat');
+    });
+
 });
 
 // Route untuk admin dan User
@@ -90,7 +104,7 @@ Route::middleware('auth')->controller(UserController::class)->prefix('u')->group
 });
 
 // Route untuk Login dengan Google
-Route::controller(SocialiteController::class)->prefix('auth/google')->group(function(){
-    Route::get('redirect', 'redirect')->name('redirect');
-    Route::get('callback', 'callback')->name('callback');
+Route::controller(SocialiteController::class)->prefix('auth')->group(function(){
+    Route::get('{driver}/redirect', 'redirect')->name('redirect');
+    Route::get('{driver}/callback', 'callback')->name('callback');
 });

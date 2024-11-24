@@ -9,12 +9,12 @@ use Laravel\Socialite\Facades\Socialite;
 
 class SocialiteController extends Controller
 {
-    public function redirect(){
-        return Socialite::driver('google')->redirect();
+    public function redirect($driver){
+        return Socialite::driver($driver)->redirect();
     }
 
-    public function callback(){
-        $googleUser = Socialite::driver('google')->user();
+    public function callback($driver){
+        $googleUser = Socialite::driver($driver)->user();
  
         $user = User::updateOrCreate([
             'email' => $googleUser->email,
