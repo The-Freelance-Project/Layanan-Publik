@@ -57,6 +57,11 @@
 </ul>
 
 <br>
+<a href="{{ route('chat.form', ['id' => $complaint->user->id]) }}" class="border border-green-500 text-green-500 rounded px-4 py-2">Kirim Pesan ke User ini</a>
+
+<br>
+<br>
+
 <h1>Proses Aduan Ini</h1>
 
 <form action="{{ route('complaint.process', ['id' => $complaint->id]) }}" method="post">

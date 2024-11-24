@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ChatController;
+use App\Http\Controllers\ChatTextController;
 use App\Http\Controllers\CompaintStatusHistoryController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\DashboardController;
@@ -77,6 +79,18 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function (){
         Route::get('form', 'category_form')->name('category.form');
         Route::post('add', 'category_add')->name('category.add');
         Route::get('delete/{id}', 'category_delete')->name('category.delete');
+    });
+
+    Route::controller(ChatController::class)->prefix('chat')->group(function(){
+        Route::get('list', 'chat_list')->name('chat.list');
+        Route::get('form/{id}', 'chat_form')->name('chat.form');
+        Route::post('new', 'new_chat')->name('chat.new');
+        Route::get('status/change/{id}', 'chatChange')->name('chatStatus.change');
+    });
+
+    Route::controller(ChatTextController::class)->prefix('chatText')->group(function(){
+        Route::get('view/{id}', 'chatText_list')->name('chatText');
+        Route::post('send', 'send_chat')->name('send.chat');
     });
 
 });
