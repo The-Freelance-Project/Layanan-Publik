@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('chats', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->foreignUuid('from')->references('id')->on('users');
-            $table->foreignUuid('to')->references('id')->on('users');
-            $table->enum('status', ['open', 'close'])->default('open');
+        Schema::create('chat_texts', function (Blueprint $table) {
+            $table->id();
+            $table->foreignUuid('chat_id')->references('id')->on('chats');
+            $table->foreignUuid('sender_id')->references('id')->on('users');
+            $table->text('message');
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('chats');
+        Schema::dropIfExists('chat_texts');
     }
 };
