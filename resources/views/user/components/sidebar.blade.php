@@ -41,7 +41,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex items-center space-x-3 hover:bg-teal-500 p-2 rounded">
+                    <a href="{{route('user.chat.list')}}" class="flex items-center space-x-3 hover:bg-teal-500 p-2 rounded">
                         <i class="fas fa-comments"></i>
                         <span>Pesan</span>
                     </a>

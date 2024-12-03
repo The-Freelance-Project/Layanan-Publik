@@ -51,6 +51,15 @@ Route::middleware(['auth', 'user'])->prefix('user')->group(function (){
         Route::get('list', 'history_list')->name('history.list');
     });
 
+    Route::controller(ChatController::class)->prefix('chat')->group(function(){
+        Route::get('list', 'user_chat_list')->name('user.chat.list');
+    });
+
+    Route::controller(ChatTextController::class)->prefix('chatText')->group(function(){
+        Route::get('view/{id}', 'chatText_list')->name('user.chatText');
+        Route::post('send', 'user_send_chat')->name('user.send.chat');
+    });
+
 });
 
 
