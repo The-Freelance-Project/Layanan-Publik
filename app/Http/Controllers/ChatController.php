@@ -63,4 +63,40 @@ class ChatController extends Controller
             return redirect()->back()->with('message', "Obrolan Chat Berhasil di Buka Kembali");
         }
     }
+
+    public function user_chat_list(){
+        $chats = Chat::where('to', Auth::user()->id)->orWhere('from', Auth::user()->id)->orderBy('updated_at', 'DESC')->get();
+        return view('user.components.chat', compact('chats'));
+    }
+
+    public function user_new_chat(Request $request) {
+        $valid = $request->validate([
+            'to' => 'required',
+            'message' => 'required'
+        ]);
+
+        try {
+            $chating = Chat::where('to', $valid['to'])->first();
+            if ($chating == null) {
+                $chating = Chat::create([
+                    'from' => Auth::user()->id,
+                    'to' => $valid['to'],
+                    'status' => 'open',
+                ]);
+            }
+    
+            ChatText::create([
+                'chat_id' => $chating->id,
+                'sender_id' => Auth::user()->id,
+                'message' => $valid['message']
+            ]);
+
+            $chating->updated_at = now();
+            $chating->save();
+
+            return redirect()->route('user.chat.list')->with('message', 'Pesan berhasil terkirim');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error', 'Terjadi kesalahan saat mengirim pesan, coba beberapa saat lagi.\n' . $th);
+        }
+    }
 }
