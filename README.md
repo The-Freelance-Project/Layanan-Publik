@@ -80,23 +80,23 @@
 
 ### Directory Overview 
 
-|- views
-|   |- admin
-|   |  - dashboard.blade.php
-|
-|   |- auth
-|   |  - login.blade.php
-|   |  - register.blade.php
-|
-|   |- components
-|   |  - alert.blade.php
-|
-|   |- user
-|   |  |- complaints
-|   |  |  - complaintForm.blade.php
-|   |  |  - complaintList.blade.php
-|   |  |  - complaintView.blade.php
-|   |  - dashboard.blade.php
-|
-|   |- landingPage.blade.php
+- views
+   - admin
+     - dashboard.blade.php
+
+   - auth
+     - login.blade.php
+     - register.blade.php
+
+   - components
+     - alert.blade.php
+
+   - user
+     - complaints
+       - complaintForm.blade.php
+       - complaintList.blade.php
+       - complaintView.blade.php
+     - dashboard.blade.php
+
+   - landingPage.blade.php
 
