@@ -11,32 +11,33 @@
 <body class="bg-gray-50">
 
     <!-- About Us Section -->
-    <!-- resources/views/about.blade.php -->
-
     <div class="container mx-auto px-6 py-12">
 
         <!-- Header Section -->
-        <section id="about" class=" bg-purple-600 p-12 rounded-lg shadow-xl">
+        <section id="about" class="bg-[#003f87] p-12 rounded-lg shadow-xl">
             <h1 class="text-white text-4xl text-center font-bold mb-4">Tentang Kami</h1>
-            <p class="text-white text-lg text-center">Kami hadir untuk mendengarkan pengaduan Anda dan memberikan solusi
-                terbaik.</p>
-            <div class="mt-5">
+            <p class="text-white text-lg text-center mb-6">Kami hadir untuk mendengarkan pengaduan Anda dan memberikan
+                solusi terbaik.</p>
+
+            <!-- Visi dan Misi -->
+            <div class="mt-8">
                 <h2 class="text-center text-3xl font-semibold text-white mb-6">Visi dan Misi Kami</h2>
-                <div class="grid grid-cols-2 gap-10 ">
+
+                <!-- Grid Section for Visi dan Misi -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
 
                     <!-- Visi Card -->
                     <div
-                        class=" bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300">
-                        <h3 class="text-2xl font-semibold text-center text-blue-600 mb-4">Visi Kami</h3>
+                        class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300">
+                        <h3 class="text-2xl font-semibold text-center text-black mb-4">Visi Kami</h3>
                         <p class="text-gray-600">Menjadi platform pengaduan masyarakat yang terpercaya, memberikan
-                            solusi
-                            cepat, dan mendukung perubahan positif dalam masyarakat.</p>
+                            solusi cepat, dan mendukung perubahan positif dalam masyarakat.</p>
                     </div>
 
                     <!-- Misi Card -->
                     <div
-                        class=" bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300">
-                        <h3 class="text-2xl font-semibold text-green-600 mb-4 text-center">Misi Kami</h3>
+                        class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300">
+                        <h3 class="text-2xl font-semibold text-black mb-4 text-center">Misi Kami</h3>
                         <ul class="list-disc pl-6 text-gray-600">
                             <li>Memberikan respons yang cepat dan efektif terhadap setiap pengaduan.</li>
                             <li>Memastikan pengaduan masyarakat ditangani dengan transparansi dan keadilan.</li>
@@ -48,15 +49,9 @@
             </div>
         </section>
 
-        <!-- Visi dan Misi Section -->
-
-
-
-        <!-- Testimonial Section -->
-
+        <!-- Add more sections like Testimonials here if necessary -->
 
     </div>
-
 
 </body>
 

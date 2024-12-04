@@ -50,7 +50,7 @@
                         <span>Location</span>
                     </a>
 
-                    <a href="#register"
+                    <a href="/register"
                         class="text-black hover:text-gray-200 flex items-center space-x-2 transition duration-300">
                         <i class="fas fa-user-plus w-6 h-6"></i>
                         <span>Register</span>

@@ -11,8 +11,8 @@
 <body class="bg-gray-50">
 
     <!-- Hero Section -->
-    <section class="relative bg-purple-600 text-white">
-        <div class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center">
+    <section class="relative bg-[#003f87] text-white"> <!-- Blue Navy background -->
+        <div class="max-w-7xl mx-auto px-6 py-12 flex flex-col-reverse flex-col md:flex-row items-center">
             <!-- Left Content -->
             <div class="w-full md:w-1/2 text-center md:text-left">
                 <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
@@ -22,26 +22,26 @@
                     Laporkan masalah di lingkungan Anda dengan cepat, transparan, dan mudah. Kami hadir untuk membantu
                     Anda.
                 </p>
-                <div>
+                <div class="flex">
                     <a href="#laporkan"
-                        class="bg-white text-blue-500 px-6 py-3 rounded-lg shadow-md hover:bg-gray-100 transition">
+                        class="bg-yellow-500 text-[#003f87] px-6 py-3 rounded-lg shadow-md hover:bg-yellow-600 transition">
                         Laporkan Pengaduan
                     </a>
                     <a href="#learn-more"
-                        class="ml-4 text-white border border-white px-6 py-3 rounded-lg hover:bg-blue-600 transition">
+                        class="ml-4 text-white border border-white px-6 py-3 rounded-lg hover:bg-[#003f87] hover:text-yellow-500 transition">
                         Pelajari Lebih Lanjut
                     </a>
                 </div>
             </div>
 
             <!-- Right Content (Illustration or Image) -->
-            <div class="w-full md:w-1/2 mt-10 md:mt-0 flex justify-center">
-                <img src="https://via.placeholder.com/500x400" alt="Hero Illustration" class="w-full max-w-md">
+            <div class=" md:w-[300px] md:ml-40 mt-10 md:mt-0 flex justify-center">
+                <img src="/logo.png" alt="Hero Illustration" class="w-full max-w-md">
             </div>
         </div>
 
         <!-- Decorative Shape -->
-        {{-- <div class="absolute bottom-0 left-0 right-0 h-16 bg-blue-600"></div> --}}
+        {{-- <div class="absolute bottom-0 left-0 right-0 h-16 bg-[#003f87]"></div> --}}
     </section>
 
 </body>

@@ -12,7 +12,7 @@
 <body class="bg-gray-50 text-white">
 
     <!-- Footer Humas Polresta Padang -->
-    <footer class="bg-purple-600 text-white py-12">
+    <footer class="bg-[#003f87] text-white py-12">
         <div class="container mx-auto px-6 md:px-12 lg:px-20">
             <!-- Bagian Atas Footer -->
             <div class="flex flex-col md:flex-row justify-between mb-12">

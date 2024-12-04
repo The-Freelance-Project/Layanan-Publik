@@ -11,7 +11,7 @@
 <body class="bg-gray-50 text-white">
 
     <!-- Section Lokasi Humas Polresta Padang -->
-    <section id="location" class="bg-purple-600 py-12 lg:px-52 sm:px-6 mb-10">
+    <section id="location" class="bg-[#003f87] py-12 lg:px-52 sm:px-6 mb-10">
         <div class="container mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
             <!-- Informasi Lokasi -->
             <div class="flex-1">
@@ -26,11 +26,11 @@
                         target="_blank">
                         <i class="fab fa-instagram"></i> <!-- Replace with FaInstagram icon -->
                     </a>
-                    <a href="https://youtube.com/polrestapadang" class="text-white hover:text-blue-600 text-2xl"
+                    <a href="https://youtube.com/polrestapadang" class="text-white hover:text-red-600 text-2xl"
                         target="_blank">
                         <i class="fab fa-youtube"></i> <!-- Replace with FaYoutube icon -->
                     </a>
-                    <a href="https://tiktok.com/@polrestapadang" class="text-white hover:text-blue-600 text-2xl"
+                    <a href="https://tiktok.com/@polrestapadang" class="text-white hover:text-blue-400 text-2xl"
                         target="_blank">
                         <i class="fab fa-tiktok"></i> <!-- Replace with FaTiktok icon -->
                     </a>
@@ -38,7 +38,7 @@
 
                 <!-- Tombol Tunjukkan Arah -->
                 <a href="https://www.google.com/maps?q=Polresta+Padang&hl=id" target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center space-x-2 bg-blue-500 text-white py-2 px-4 rounded-full shadow hover:bg-blue-600 transition">
+                    class="inline-flex items-center space-x-2 bg-[#FFCC00] text-[#003f87] py-2 px-4 rounded-full shadow hover:bg-[#FFB800] transition">
                     <span class="font-semibold">Tunjukkan Arah</span>
                 </a>
 
