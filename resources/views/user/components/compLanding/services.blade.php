@@ -11,7 +11,7 @@
 <body class="bg-gray-50">
 
     <!-- Layanan Kami Section -->
-    <section id="services" class="py-16 px-6 bg-purple-600 text-white mb-10">
+    <section id="services" class="py-16 px-6 bg-[#003f87] text-white mb-10">
         <div class="max-w-7xl mx-auto text-center">
             <h2 class="text-4xl font-bold mb-4">
                 Layanan Kami
@@ -27,7 +27,7 @@
                     class="bg-white text-gray-800 rounded-lg shadow-lg p-6 transform hover:-translate-y-2 transition duration-300">
                     <div class="flex justify-center items-center mb-4">
                         <div
-                            class="w-16 h-16 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-md">
+                            class="w-16 h-16 bg-gradient-to-tr from-[#003f87] to-[#FFCC00] rounded-full flex items-center justify-center shadow-md">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3" />
@@ -47,7 +47,7 @@
                     class="bg-white text-gray-800 rounded-lg shadow-lg p-6 transform hover:-translate-y-2 transition duration-300">
                     <div class="flex justify-center items-center mb-4">
                         <div
-                            class="w-16 h-16 bg-gradient-to-tr from-green-500 to-teal-500 rounded-full flex items-center justify-center shadow-md">
+                            class="w-16 h-16 bg-gradient-to-tr from-[#FFCC00] to-[#003f87] rounded-full flex items-center justify-center shadow-md">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -68,7 +68,7 @@
                     class="bg-white text-gray-800 rounded-lg shadow-lg p-6 transform hover:-translate-y-2 transition duration-300">
                     <div class="flex justify-center items-center mb-4">
                         <div
-                            class="w-16 h-16 bg-gradient-to-tr from-yellow-500 to-orange-500 rounded-full flex items-center justify-center shadow-md">
+                            class="w-16 h-16 bg-gradient-to-tr from-[#FFCC00] to-[#003f87] rounded-full flex items-center justify-center shadow-md">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

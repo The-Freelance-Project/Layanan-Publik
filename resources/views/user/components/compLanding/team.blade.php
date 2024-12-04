@@ -62,11 +62,11 @@
 
                 document.querySelectorAll(".tab-button").forEach((button, index) => {
                     if (index === selected) {
-                        button.classList.add("bg-blue-600", "text-white");
+                        button.classList.add("bg-[#003f87]", "text-white");
                         button.classList.remove("bg-gray-100", "text-gray-700");
                     } else {
                         button.classList.add("bg-gray-100", "text-gray-700");
-                        button.classList.remove("bg-blue-600", "text-white");
+                        button.classList.remove("bg-[#003f87]", "text-white");
                     }
                 });
             };
@@ -95,31 +95,31 @@
 
 <body class="bg-gray-50 text-gray-800">
 
-    <section id="team" class="py-16 px-4 bg-purple-600 mb-10">
+    <section id="team" class="py-16 px-4 bg-[#003f87] mb-10">
         <h2 class="text-3xl font-bold text-center mb-8 text-white">Tim Humas Pengaduan Masyarakat</h2>
 
         <!-- Tabs -->
         <div class="flex flex-wrap justify-center gap-4 mb-8">
             <button
-                class="px-4 py-2 rounded-full font-semibold transition tab-button shadow-md hover:bg-blue-500 hover:text-white">Tim
+                class="px-4 py-2 rounded-full font-semibold transition tab-button shadow-md hover:bg-yellow-500 hover:text-white">Tim
                 1</button>
             <button
-                class="px-4 py-2 rounded-full font-semibold transition tab-button shadow-md hover:bg-blue-500 hover:text-white">Tim
+                class="px-4 py-2 rounded-full font-semibold transition tab-button shadow-md hover:bg-yellow-500 hover:text-white">Tim
                 2</button>
             <button
-                class="px-4 py-2 rounded-full font-semibold transition tab-button shadow-md hover:bg-blue-500 hover:text-white">Tim
+                class="px-4 py-2 rounded-full font-semibold transition tab-button shadow-md hover:bg-yellow-500 hover:text-white">Tim
                 3</button>
             <button
-                class="px-4 py-2 rounded-full font-semibold transition tab-button shadow-md hover:bg-blue-500 hover:text-white">Tim
+                class="px-4 py-2 rounded-full font-semibold transition tab-button shadow-md hover:bg-yellow-500 hover:text-white">Tim
                 4</button>
             <button
-                class="px-4 py-2 rounded-full font-semibold transition tab-button shadow-md hover:bg-blue-500 hover:text-white">Tim
+                class="px-4 py-2 rounded-full font-semibold transition tab-button shadow-md hover:bg-yellow-500 hover:text-white">Tim
                 5</button>
             <button
-                class="px-4 py-2 rounded-full font-semibold transition tab-button shadow-md hover:bg-blue-500 hover:text-white">Tim
+                class="px-4 py-2 rounded-full font-semibold transition tab-button shadow-md hover:bg-yellow-500 hover:text-white">Tim
                 6</button>
             <button
-                class="px-4 py-2 rounded-full font-semibold transition tab-button shadow-md hover:bg-blue-500 hover:text-white">Tim
+                class="px-4 py-2 rounded-full font-semibold transition tab-button shadow-md hover:bg-yellow-500 hover:text-white">Tim
                 7</button>
         </div>
 
@@ -138,9 +138,9 @@
         <!-- Navigation Buttons -->
         <div class="flex justify-center gap-6 mt-6">
             <button id="prev-btn"
-                class="p-3 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-400 transition">←</button>
+                class="p-3 bg-[#003f87] text-white rounded-full shadow-lg hover:bg-blue-400 transition">←</button>
             <button id="next-btn"
-                class="p-3 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-400 transition">→</button>
+                class="p-3 bg-[#003f87] text-white rounded-full shadow-lg hover:bg-blue-400 transition">→</button>
         </div>
     </section>
 
