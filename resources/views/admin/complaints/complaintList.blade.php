@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,126 +8,141 @@
 
     <!-- Set TailwindCss -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <!-- Lightbox -->
+    <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/css/lightbox.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox.min.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
 
-<h1>HALAMAN COMPLAINT LIST ADMIN</h1>
+<body class="bg-gray-100 font-sans">
 
-<br><br>
+    <div class="container mx-auto p-5">
 
-  <!-- Navigasi -->
-  <ul class="w-full flex space-x-4 px-4">
+        <!-- Header -->
+        <header class="text-center py-5 mb-8 bg-blue-700 text-white rounded-lg shadow-lg">
+            <h1 class="text-4xl font-bold">HALAMAN COMPLAINT LIST ADMIN</h1>
+        </header>
 
-    <li class="p-1 border border-black rounded">
-        <a href="{{ route('complaint.admin') }}">Complaint List</a>
-    </li>
+        <!-- Navigasi -->
+        <nav class="bg-yellow-500 text-white rounded-lg shadow-lg p-5 mb-8">
+            <h2 class="text-2xl  mb-4 text-center">Navigation</h2>
+            <ul class="flex flex-wrap gap-4 justify-center">
+                <li class="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition">
+                    <a href="{{ route('complaint.admin') }}">Complaint List</a>
+                </li>
+                <li class="bg-yellow-600 text-white px-4 py-2 rounded-xl hover:bg-yellow-700 transition">
+                    <a href="{{ route('category.list') }}">Category List</a>
+                </li>
+                <li class="bg-red-600 text-white px-4 py-2 rounded-xl hover:bg-red-700 transition">
+                    <a href="{{ route('chat.list') }}">Pesan / Chat</a>
+                </li>
+                <li class="bg-green-600 text-white px-4 py-2 rounded-xl hover:bg-green-700 transition">
+                    <a href="{{ route('profile') }}">Profile</a>
+                </li>
+                <li class="bg-gray-600 text-white px-4 py-2 rounded-xl hover:bg-gray-700 transition">
+                    <a href="{{ route('logout') }}">Logout</a>
+                </li>
+                <li class="bg-purple-600 text-white px-4 py-2 rounded-xl hover:bg-purple-700 transition">
+                    <a href="{{ redirect()->back() }}">Kembali</a>
+                </li>
+            </ul>
+        </nav>
 
-    <li class="p-1 border border-black rounded">
-        <a href="{{ route('category.list') }}">Category List</a>
-    </li>
+        <!-- Set Alert -->
+        @include('components.alert')
 
-    <li class="p-1 border border-black rounded">
-        <a href="{{ route('profile') }}">Profile</a>
-    </li>
-
-    <li class="p-1 border border-black rounded">
-        <!-- untuk logout gunakan ini -->
-        <a href="{{ route('logout') }}">Logout</a>
-    </li>
-
-    <li class="p-1 border border-black rounded">
-        <a href="{{ redirect()->back() }}">Kembali</a>
-    </li>
-
- </ul>
-
- <br><br>
-
-<!-- Set Alert biar muncul kalo error -->
-@include('components.alert')
-
-
-<br><br>
-<!-- ini buat filter Complaint nya -->
-
-<form action="" method="get">
-    @csrf
-    <h1>Filter Complaint</h1>
-    <div>
-        <label for="status">Filter By Status</label>
-        <select name="status" id="status">
-            <option value="">Semua Status</option>
-            <option value="pending" {{ request('status') == 'pending' ? 'selected' : '' }}>Pending</option>
-            <option value="in_progres" {{ request('status') == 'in_progres' ? 'selected' : '' }}>Dalam Proses</option>
-            <option value="resolved" {{ request('status') == 'resolved' ? 'selected' : '' }}>Selesai</option>
-            <option value="rejected" {{ request('status') == 'rejected' ? 'selected' : '' }}>Ditolak</option>
-            <option value="canceled" {{ request('status') == 'canceled' ? 'selected' : '' }}>Dibatalkan</option>
-        </select>
-    </div>
-    <br>
-    <h1>Filter By Tanggal</h1>
-    <div class="flex space-x-4">
-        <div>
-            <label for="start_date">Dari Tgl</label>
-            <input type="date" name="start_date" id="start_date" value="{{ request('start_date') }}">
+        <div class="my-8">
+            <!-- Filter Form -->
+            <h2 class="text-2xl font-bold mb-4 text-blue-700">Filter Complaint</h2>
+            <form action="" method="get">
+                @csrf
+                <div class="mb-4">
+                    <label for="status" class="block text-lg font-semibold">Filter By Status</label>
+                    <select name="status" id="status" class="w-full p-2 border rounded-lg bg-white">
+                        <option value="">Semua Status</option>
+                        <option value="pending" {{ request('status') == 'pending' ? 'selected' : '' }}>Pending</option>
+                        <option value="in_progres" {{ request('status') == 'in_progres' ? 'selected' : '' }}>Dalam
+                            Proses</option>
+                        <option value="resolved" {{ request('status') == 'resolved' ? 'selected' : '' }}>Selesai
+                        </option>
+                        <option value="rejected" {{ request('status') == 'rejected' ? 'selected' : '' }}>Ditolak
+                        </option>
+                        <option value="canceled" {{ request('status') == 'canceled' ? 'selected' : '' }}>Dibatalkan
+                        </option>
+                    </select>
+                </div>
+                <div class="mb-4 flex space-x-4">
+                    <div class="w-full">
+                        <label for="start_date" class="block text-lg font-semibold">Dari Tgl</label>
+                        <input type="date" name="start_date" id="start_date"
+                            class="w-full p-2 border rounded-lg bg-white" value="{{ request('start_date') }}">
+                    </div>
+                    <div class="w-full">
+                        <label for="end_date" class="block text-lg font-semibold">Hingga Tgl</label>
+                        <input type="date" name="end_date" id="end_date"
+                            class="w-full p-2 border rounded-lg bg-white" value="{{ request('end_date') }}">
+                    </div>
+                </div>
+                <div class="flex space-x-4 mt-4">
+                    <button type="submit"
+                        class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Filter
+                        Complaint</button>
+                    <a href="{{ url()->current() }}"
+                        class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition">Reset Filter</a>
+                </div>
+            </form>
         </div>
-        <div>
-            <label for="end_date">Hingga Tgl</label>
-            <input type="date" name="end_date" id="end_date" value="{{ request('end_date') }}">
+
+        <!-- Complaint Table -->
+        <div class="overflow-x-auto bg-white shadow-lg rounded-lg">
+            <table class="min-w-full table-auto">
+                <thead class="bg-blue-600 text-white">
+                    <tr>
+                        <th class="px-4 py-2">Judul</th>
+                        <th class="px-4 py-2">Kategori</th>
+                        <th class="px-4 py-2">Tanggal</th>
+                        <th class="px-4 py-2">Status</th>
+                        <th class="px-4 py-2">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($complaints as $complaint)
+                        <tr class="border-b">
+                            <td class="px-4 py-2">{{ $complaint->title }}</td>
+                            <td class="px-4 py-2">{{ $complaint->category->name }}</td>
+                            <td class="px-4 py-2">{{ $complaint->created_at->format('d-m-Y') }}</td>
+                            <td class="px-4 py-2">
+                                <span
+                                    class="px-2 py-1 rounded-full text-white 
+                                {{ $complaint->status == 'pending' ? 'bg-yellow-500' : '' }}
+                                {{ $complaint->status == 'in_progres' ? 'bg-blue-500' : '' }}
+                                {{ $complaint->status == 'resolved' ? 'bg-green-500' : '' }}
+                                {{ $complaint->status == 'rejected' ? 'bg-red-500' : '' }}
+                                {{ $complaint->status == 'canceled' ? 'bg-gray-500' : '' }}">
+                                    {{ ucfirst($complaint->status) }}
+                                </span>
+                            </td>
+                            <td class="px-4 py-2">
+                                <a href="{{ route('complaint.view.admin', ['id' => $complaint->id]) }}"
+                                    class="text-blue-500 hover:text-blue-700">Lihat</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
+
+        <!-- Pagination (if any) -->
+        <div class="mt-8">
+            {{-- {{ $complaints->links() }} --}}
+        </div>
+
     </div>
-    <div class="flex space-x-4 mt-2">
-        <button type="submit" class="border border-black rounded px-4 py-2">Filter Complaint</button>
-        <a href="{{ url()->current() }}" class="border border-red-500 text-red-500 rounded px-4 py-2">Reset Filter</a>
-    </div>
-</form>
-
-
-
-<br><br>
-
-
-<!-- ini tabel Complaint nya -->
-<table>
-    <thead>
-        <tr>
-            <th>Judul</th>
-            <th>Kategori</th>
-            <th>Tanggal</th>
-            <th>Status</th>
-            <th>Aksi</th>
-        </tr>
-    </thead>
-    <tbody>
-
-        @foreach ($complaints as $complaint)
-            
-        <tr>
-            <td>{{ $complaint->title }}</td>
-            <td class="px-4">{{ $complaint->category->name }}</td>
-            <td>{{ $complaint->created_at }}</td>
-            <td class="px-4">{{ $complaint->status }}</td>
-            <td>
-                <a href="{{ route('complaint.view.admin', ['id' => $complaint->id]) }}">Lihat</a>
-            </td>
-        </tr>
-
-        @endforeach
-
-    </tbody>
-</table>
-
-
- <!-- Navigasi -->
- <ul>
-    <li>
-        <a href="{{ route('complaint') }}">Complaint List</a>
-    </li>
-    <li>
-        <!-- untuk logout gunakan ini -->
-        <a href="{{ route('logout') }}">Logout</a>
-    </li>
- </ul>
 
 </body>
+
 </html>
