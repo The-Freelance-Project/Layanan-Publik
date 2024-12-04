@@ -57,10 +57,10 @@
             </div>
 
             <!-- Peta Google -->
-            <div class="flex-1">
-                <iframe
+            <div class="flex-1 w">
+                <iframe class="h-[450px] w-[385px] md:h-[450px] md:w-[450px]"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.2686100239816!2d100.36016577370559!3d-0.9511149353490036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b9466a3a6c65%3A0xf82fdd26c1812e5b!2sPolresta%20Padang!5e0!3m2!1sen!2sid!4v1732077028583!5m2!1sen!2sid"
-                    width="450" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    width="" height="" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
