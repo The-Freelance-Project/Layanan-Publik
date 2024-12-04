@@ -16,7 +16,7 @@
     <div class="flex">
         <!-- Sidebar Container -->
         <div id="sidebar"
-            class="lg:block w-64 bg-purple-600 text-white max-h-full p-5 transition-all duration-300 ease-in-out">
+            class="lg:block w-64 bg-[#003f87] text-white max-h-full p-5 transition-all duration-300 ease-in-out">
             <h2 class="text-xl font-semibold text-center mb-6">Humas Polresta Padang</h2>
             {{-- <img src="/" alt=""> --}}
             <ul class="space-y-4">

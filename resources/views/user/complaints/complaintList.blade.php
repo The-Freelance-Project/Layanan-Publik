@@ -27,7 +27,7 @@
                     <li><a href="{{ route('complaint') }}"
                             class="text-blue-600 hover:text-blue-800 flex items-center space-x-2"><i
                                 class="fas fa-list-ul"></i><span>Daftar Pengaduan</span></a></li>
-                    <li><a href="{{ route('logout') }}"
+                    <li><a href="{{ route('logout') }} "
                             class="text-red-600 hover:text-red-800 flex items-center space-x-2"><i
                                 class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>
                 </ul>
@@ -54,11 +54,10 @@
                 </div>
             </div>
 
-
             <!-- Tabel Daftar Pengaduan -->
             <div class="overflow-x-auto bg-white shadow-lg rounded-lg">
                 <table class="min-w-full text-left table-auto">
-                    <thead class="bg-gradient-to-r from-purple-500 via-blue-500 to-teal-500 text-white">
+                    <thead class="bg-gradient-to-r from-[#003f87] via-[#0062a1] to-[#00b0b9] text-white">
                         <tr>
                             <th class="px-6 py-3 text-sm font-medium">No</th>
                             <th class="px-6 py-3 text-sm font-medium">Kategori</th>

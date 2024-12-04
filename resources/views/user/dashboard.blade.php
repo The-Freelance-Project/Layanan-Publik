@@ -24,7 +24,7 @@
         <!-- Main Content -->
         <div class="flex-1 p-6">
             <!-- Top Header -->
-            <div class="flex justify-between p-2 bg-purple-600 items-center">
+            <div class="flex justify-between p-2 bg-[#003f87] items-center">
                 <h1 class="text-center text-white">
                     Selamat Datang <b>{{ $user->name }}</b> di Dashboard Anda
                 </h1>
